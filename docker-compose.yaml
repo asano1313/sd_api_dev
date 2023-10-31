@@ -1,0 +1,40 @@
+version: "3.0"
+
+services:
+  sd_api_dev:
+    build:
+      context: ./
+      dockerfile: "./cuda_ubuntu/Dockerfile"
+    container_name: "cuda_ubuntu_container_dev"
+    working_dir: /var/www/app
+    restart: always
+    volumes:
+      - ./src:/var/www/app/src
+    expose:
+      - "8080"
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  nginx:
+    image: nginx:1.21-alpine
+    container_name: "app_nginx"
+    build:
+      context: ./
+      dockerfile: "./nginx/Dockerfile"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/log:/var/log/nginx
+    restart: always
+    depends_on:
+      - sd_api_dev
+    ports:
+      - "8080:80"
+    links:
+      - sd_api_dev
+

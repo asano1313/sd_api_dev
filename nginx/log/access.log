@@ -1,0 +1,7 @@
+172.18.0.1 - - [30/Oct/2023:04:30:17 +0000] "GET / HTTP/1.1" 200 18 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [30/Oct/2023:04:53:45 +0000] "GET / HTTP/1.1" 200 18 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [30/Oct/2023:05:47:43 +0000] "GET / HTTP/1.1" 200 18 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [30/Oct/2023:05:48:06 +0000] "GET /docs HTTP/1.1" 200 931 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [30/Oct/2023:05:48:14 +0000] "GET /docs HTTP/1.1" 200 931 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [30/Oct/2023:05:48:15 +0000] "GET /openapi.json HTTP/1.1" 200 1365 "http://localhost:8080/docs" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [30/Oct/2023:05:48:21 +0000] "GET / HTTP/1.1" 200 18 "http://localhost:8080/docs" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "-"
