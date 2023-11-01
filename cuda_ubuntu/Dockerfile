@@ -14,8 +14,8 @@ RUN apt install -y python3-pip
 RUN pip install --upgrade pip
 # RUN pip install poetry
 # RUN poetry install --no-root
-RUN pip install diffusers uvicorn requests fastapi invisible_watermark transformers accelerate safetensors
+RUN pip install diffusers uvicorn requests fastapi invisible_watermark transformers accelerate safetensors Gunicorn
 
 COPY ./src /var/www/app/src
 
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "src.main:app", "--bind", "0.0.0.0:8080"]
