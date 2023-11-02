@@ -5,6 +5,7 @@ from diffusers import DiffusionPipeline
 import torch
 import os
 import base64
+import signal
 
 app = FastAPI(docs_url="/docs")
 
@@ -54,5 +55,11 @@ async def text2img(_text2imgprm: Text2ImgPrm):
     # )
 
     # print(image)
+    del pipe, generator, image
+    torch.cuda.empty_cache()
+
+    pid = os.getpid()
+    os.system(f"nvidia-smi --gpu-reset -i 0 -r -c {pid}")
+    os.kill(pid, signal.SIGTERM)
 
     return base64_img

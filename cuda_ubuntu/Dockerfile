@@ -18,4 +18,4 @@ RUN pip install diffusers uvicorn requests fastapi invisible_watermark transform
 
 COPY ./src /var/www/app/src
 
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "src.main:app", "--bind", "0.0.0.0:8080"]
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "src.main:app", "--bind", "0.0.0.0:8080", "--timeout", "240"]
